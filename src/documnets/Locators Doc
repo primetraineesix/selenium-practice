@@ -1,0 +1,106 @@
+Locators in Selenium
+
+CSS Selectors (Cascade Style Sheet)
+--------------------------------
+Tag and ID                  tag#id
+Tag and Class             tag.class
+Tag and attribute      tag[attribute=value]
+Tag, class and attribute
+
+
+Xpath
+----------------------------------
+What is xpath?
+
+xPath is defined as xml path.
+It is a syntax or langauge for finding any elemet on the web page using XML path expression.
+XPath is used to find the location of any element on a webpage using HTML DOM structure.
+XPath can be used to navigate through elements and attributes in DOM (Document Object Model).
+
+Example: /html/body/div[1]/div/div[3]/div[1]/img
+
+Types of XPaths
+--------------------------
+1. Absolute XPath / Full XPath
+	/html/body/div[1]/div/div[3]/div[1]/img
+
+2. Relative XPath / patrial xpath
+	//*[@id="divLogo"]/img
+
+Diff between Absolute & Relative XPaths
+-----------------------------------------------------
+1) Absolute xpath starts from toot node
+    Relative xpath directly jump to element on DOM
+2) Absolute xpath starts with /
+    Relative xpath starts with //
+3) In Absolute xpath we use only tags/nodes
+    In Relative xpath we use attributes.
+
+Syntax of Relative Xpath
+-------------------------
+Syntax : //tagname[@attribute='value']
+Example: //input[@name='txtUsername']
+
+How to capture Xpath?
+------------------------------------
+1) Right click on element --> Inspect --> Highlight html ----> Right click --> Copy Xpath
+2) Chropath extension
+3) Selectors Hub
+
+Which XPath is preferd? Why?
+Ans: Relative xpath
+
+/html/body/div[1]/div/div[3]/div[1]/img
+//*[@id="divLogo"]/img
+
+XPaths options
+------------------------
+or
+and
+contains()
+starts-with()
+text()
+chained xpath
+
+//input[@id='search_query_top' or @name='search_queryX']
+
+contains()
+------------------
+
+//tagname[contains(@attribute, 'value')]
+//input[@id = 'firstname']  ---->  Basic xpath
+//input[contains(@id, 'first')]  ---> using contains()
+
+//input[@id = 'start']
+//input[@id= 'stop']
+//input[contains(@id, 'st')]  -----> Dynamic xpath
+//input[starts-with(@id, 'st')]  ----> Dynamic xpath
+
+text()
+---------------------
+//a[text()='Women']
+
+chained xpath
+--------------
+//form[@id='searchbox']//input[@id='search_query_top']
+//form[@id='searchbox']//input[4]
+
+XPath Axes
+------------------------
+XPath axes are those axes that are usded to search for the multiple nodes in the XML document from the current node context.
+These methods are mainly used when the web element is not identified with the help of ID, name, class name, link text, css selector.
+
+Self
+Parent
+Child
+Ancestor
+Descendant
+Following
+Following-sibling
+Preceding
+Preceding-sibling
+
+1) Find the sign-up button from the registration form present in the Facebook application. (Child)
+//div[@id='reg_form_box']/child::div[10]/button
+2) Locate Firstname field form SignUp button in facebook (Parent)
+//button[@id='u_0_10_rk']/parent::div/parent::div/child::div[1]/div/div[1]

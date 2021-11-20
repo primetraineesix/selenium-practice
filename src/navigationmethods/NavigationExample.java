@@ -32,4 +32,6 @@ public class NavigationExample {
         driver.navigate().refresh(); // this will refresh the page
 
     }
+
+
 }
